@@ -5,7 +5,7 @@ export const personalInfo = {
   heroDescription: "I build practical web applications and backend solutions with a focus on clean, functional, and user-friendly experiences.",
   email: "shalinirichhariya01@gmail.com",
   location: "India",
-  github: "https://github.com/",
+  github: "https://github.com/2005shalini",
   linkedin: "https://linkedin.com/in/",
   resumeUrl: "https://drive.google.com/file/d/13a5_DR8IGEgzQc3RRqupfuZsRRfe-P8L/view?usp=drivesdk",
 };
@@ -85,7 +85,7 @@ export const projectsData = [
     tagline: "Medical Consultation & Medication Tracker",
     description: "A medical consultation and medication tracking platform built to help patients schedule doctor appointments and track their daily medication schedules with automated reminders.",
     techStack: ["React", "Python", "Flask", "MySQL", "REST APIs", "Tailwind CSS"],
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/2005shalini/mediverify",
     liveDemoUrl: "#",
     featured: true
   },
@@ -95,7 +95,7 @@ export const projectsData = [
     tagline: "Pet Management & Adoption Platform",
     description: "A pet management system featuring user authentication, appointment booking, pet profiles, an online product store, adoption listings, and a community lost & found module.",
     techStack: ["React", "JavaScript", "Python", "Flask", "SQL", "Tailwind CSS"],
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/2005shalini/petverse",
     liveDemoUrl: "#",
     featured: true
   },
@@ -105,7 +105,7 @@ export const projectsData = [
     tagline: "AI Document Q&A Application",
     description: "An AI-powered application that allows users to upload PDF documents and get accurate answers using document retrieval and LLM-based responses.",
     techStack: ["Python", "Flask", "LangChain", "Vector DB", "React", "REST APIs"],
-    githubUrl: "https://github.com/",
+    githubUrl: "https://github.com/2005shalini/ai-pdf-chat-rag",
     liveDemoUrl: "#",
     featured: true
   }
