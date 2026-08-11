@@ -27,7 +27,13 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center mb-14"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-purple-400 mb-3">
             <MessageSquare className="w-3.5 h-3.5" />
             <span>GET IN TOUCH</span>
@@ -39,16 +45,16 @@ export default function Contact() {
           <p className="text-slate-400 text-sm max-w-xl mt-4">
             Whether you are looking for an intern, entry-level backend engineer, or web developer, feel free to reach out!
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
           
           {/* Left Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 space-y-6"
           >
             <div className="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
@@ -56,21 +62,21 @@ export default function Contact() {
                 Contact Details
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                I am actively seeking software development, backend engineering, and web development opportunities. Let’s start a conversation!
+                I’m currently open to software development, backend engineering, and web development opportunities. Feel free to send a message or connect with me directly!
               </p>
 
               <div className="space-y-4 pt-2">
                 {/* Email Item */}
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 hover:bg-slate-900 transition-all group"
+                  className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 hover:bg-slate-900 transition-all duration-200 group"
                 >
-                  <div className="p-2.5 rounded-lg bg-pink-500/10 text-pink-400 group-hover:scale-105 transition-transform">
+                  <div className="p-2.5 rounded-lg bg-pink-500/10 text-pink-400 group-hover:scale-105 transition-transform duration-200">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-[11px] font-medium text-slate-400">Email</div>
-                    <div className="text-sm font-semibold text-slate-200 group-hover:text-pink-300 transition-colors">
+                    <div className="text-sm font-semibold text-slate-200 group-hover:text-pink-300 transition-colors duration-200">
                       {personalInfo.email}
                     </div>
                   </div>
@@ -81,14 +87,14 @@ export default function Contact() {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 hover:bg-slate-900 transition-all group"
+                  className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 hover:bg-slate-900 transition-all duration-200 group"
                 >
-                  <div className="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 group-hover:scale-105 transition-transform">
+                  <div className="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 group-hover:scale-105 transition-transform duration-200">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-[11px] font-medium text-slate-400">LinkedIn</div>
-                    <div className="text-sm font-semibold text-slate-200 group-hover:text-pink-300 transition-colors">
+                    <div className="text-sm font-semibold text-slate-200 group-hover:text-pink-300 transition-colors duration-200">
                       LinkedIn Profile
                     </div>
                   </div>
@@ -99,14 +105,14 @@ export default function Contact() {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 hover:bg-slate-900 transition-all group"
+                  className="flex items-center gap-4 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-pink-500/40 hover:bg-slate-900 transition-all duration-200 group"
                 >
-                  <div className="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 group-hover:scale-105 transition-transform">
+                  <div className="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 group-hover:scale-105 transition-transform duration-200">
                     <Github className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-[11px] font-medium text-slate-400">GitHub</div>
-                    <div className="text-sm font-semibold text-slate-200 group-hover:text-pink-300 transition-colors">
+                    <div className="text-sm font-semibold text-slate-200 group-hover:text-pink-300 transition-colors duration-200">
                       GitHub Repositories
                     </div>
                   </div>
@@ -117,10 +123,10 @@ export default function Contact() {
 
           {/* Right Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
             <div className="glass-card rounded-2xl p-6 sm:p-8 relative">
@@ -147,7 +153,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/60 transition-all placeholder:text-slate-500"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/60 transition-all duration-200 placeholder:text-slate-500"
                   />
                 </div>
 
@@ -162,7 +168,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="name@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/60 transition-all placeholder:text-slate-500"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/60 transition-all duration-200 placeholder:text-slate-500"
                   />
                 </div>
 
@@ -177,7 +183,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Write your message here..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/60 transition-all placeholder:text-slate-500 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/60 transition-all duration-200 placeholder:text-slate-500 resize-none"
                   />
                 </div>
 

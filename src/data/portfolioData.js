@@ -3,31 +3,32 @@ export const personalInfo = {
   title: "Computer Science Engineer | Backend & Web Developer",
   tagline: "Building practical web applications and backend solutions.",
   heroDescription: "I build practical web applications and backend solutions with a focus on clean, functional, and user-friendly experiences.",
-  email: "shalinirichhariya.dev@gmail.com",
+  email: "shalinirichhariya01@gmail.com",
   location: "India",
   github: "https://github.com/",
   linkedin: "https://linkedin.com/in/",
-  resumeUrl: "#", // Placeholder resume link
+  resumeUrl: "https://drive.google.com/file/d/13a5_DR8IGEgzQc3RRqupfuZsRRfe-P8L/view?usp=drivesdk",
 };
 
 export const aboutData = {
   degree: "B.Tech in Computer Science & Engineering (AI)",
   status: "Final-Year Student",
   university: "Engineering University",
-  graduationYear: "2026",
+  graduationYear: "2027",
   bio: [
-    "I am a final-year B.Tech Computer Science & Engineering (Artificial Intelligence) student with a strong focus on backend and web development.",
-    "My core interests lie in designing robust backend systems, writing clean Python and SQL code, crafting intuitive REST APIs, and building AI-integrated applications that solve real-world problems.",
-    "I enjoy taking projects from idea to implementation—focusing on performance, maintainable software design, and clean user experience."
+    "I’m a final-year B.Tech student specializing in Computer Science and Engineering with a focus on Artificial Intelligence. I enjoy building practical applications and understanding how things work behind the scenes, especially in backend and web development.",
+    "I’m comfortable working with Python, SQL, REST APIs, and databases, and I’m also exploring AI-based applications. I like turning ideas into working projects and learning through hands-on development.",
+    "I’m currently focused on improving my backend development skills while continuing to explore AI, UI/UX, and modern web technologies."
   ],
   educationCard: {
     degree: "B.Tech - Computer Science & Engineering (AI)",
     status: "Final Year",
-    timeline: "2022 - 2026",
+    timeline: "2023 - 2027",
     focusAreas: [
       "Artificial Intelligence & Machine Learning Fundamentals",
       "Backend Architecture & Database Design",
-      "Object-Oriented Programming & Data Structures"
+      "Object-Oriented Programming & Data Structures",
+      "UI/UX Design & User Experience"
     ]
   }
 };
@@ -81,8 +82,8 @@ export const projectsData = [
   {
     id: "mediverify",
     title: "MEDIVERIFY",
-    tagline: "Medical Consultation & Medication Tracking Platform",
-    description: "A comprehensive digital health solution designed to facilitate secure patient-doctor consultations, manage appointment bookings, and track medication schedules with automated reminders.",
+    tagline: "Medical Consultation & Medication Tracker",
+    description: "A medical consultation and medication tracking platform built to help patients schedule doctor appointments and track their daily medication schedules with automated reminders.",
     techStack: ["React", "Python", "Flask", "MySQL", "REST APIs", "Tailwind CSS"],
     githubUrl: "https://github.com/",
     liveDemoUrl: "#",
@@ -91,8 +92,8 @@ export const projectsData = [
   {
     id: "petverse",
     title: "PetVerse",
-    tagline: "All-in-One Pet Management & Adoption Portal",
-    description: "A full-featured pet management system incorporating user authentication, veterinary appointment booking, pet profile management, e-commerce products store, adoption listings, and a community lost & found module.",
+    tagline: "Pet Management & Adoption Platform",
+    description: "A pet management system featuring user authentication, appointment booking, pet profiles, an online product store, adoption listings, and a community lost & found module.",
     techStack: ["React", "JavaScript", "Python", "Flask", "SQL", "Tailwind CSS"],
     githubUrl: "https://github.com/",
     liveDemoUrl: "#",
@@ -101,8 +102,8 @@ export const projectsData = [
   {
     id: "ai-pdf-chat",
     title: "AI PDF Chat / RAG",
-    tagline: "Intelligent Document Retrieval & Q&A Assistant",
-    description: "An AI-powered document interaction system utilizing Retrieval-Augmented Generation (RAG) to allow users to upload PDFs and query contextually accurate answers backed by LLM embeddings and document search.",
+    tagline: "AI Document Q&A Application",
+    description: "An AI-powered application that allows users to upload PDF documents and get accurate answers using document retrieval and LLM-based responses.",
     techStack: ["Python", "Flask", "LangChain", "Vector DB", "React", "REST APIs"],
     githubUrl: "https://github.com/",
     liveDemoUrl: "#",
@@ -116,11 +117,11 @@ export const experienceData = [
     role: "Director of Strategic Initiatives / Social Media Lead",
     timeline: "2024 - Present",
     type: "Leadership & Community",
-    description: "Lead technical event planning, public relations, and strategic community outreach initiatives. Coordinated team communication and digital presence to foster engagement across student tech circles.",
+    description: "Organized student workshops, technical events, and community outreach. Managed social media strategy and coordinated team activities to engage student developer circles.",
     highlights: [
-      "Directed strategic initiatives to organize workshops and technical collaborative sessions.",
-      "Managed social media strategy and promotional outreach for club events.",
-      "Facilitated team alignment across event logistics and student participation."
+      "Organized technical workshops and collaborative student events.",
+      "Managed social media presence and event promotions.",
+      "Coordinated team activities and event logistics."
     ]
   },
   {
@@ -137,14 +138,14 @@ export const certificatesData = [
     id: 1,
     title: "SQL (Intermediate)",
     issuer: "HackerRank",
-    year: "2024",
+    year: "2026",
     credentialUrl: "https://drive.google.com/file/d/1FsvVA7WU1rBbi5XHfzbwVIvWVRwpwSJl/view?usp=drivesdk"
   },
   {
     id: 2,
     title: "Artificial Intelligence – Beginner’s Guide",
     issuer: "Simplilearn",
-    year: "2024",
+    year: "2026",
     credentialUrl: "https://drive.google.com/file/d/1FebtlXw0u1Oy9aXZ5otM2OGFx7W2nVHJ/view?usp=drivesdk"
   },
   {
@@ -152,7 +153,7 @@ export const certificatesData = [
     title: "The Elites Community — Leadership & Strategic Initiatives",
     issuer: "The Elites Community",
     role: "Director of Strategic Initiatives / Social Media Lead",
-    year: "2024",
+    year: "2025",
     credentialUrl: "https://drive.google.com/file/d/1bBVHDxnel5HBEXRgKSI5iiCrylslqqm9/view?usp=drivesdk"
   }
 ];

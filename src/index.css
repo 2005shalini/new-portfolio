@@ -37,13 +37,12 @@
 }
 
 .glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(236, 72, 153, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(236, 72, 153, 0.15);
-  transform: translateY(-2px);
+  border-color: rgba(236, 72, 153, 0.35);
+  box-shadow: 0 12px 32px -10px rgba(236, 72, 153, 0.15);
 }
 
 /* Gradient Text Effect */
@@ -57,4 +56,17 @@
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

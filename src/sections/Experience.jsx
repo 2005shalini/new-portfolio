@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Users, Trophy, Calendar } from 'lucide-react';
+import { Users, Calendar } from 'lucide-react';
 import { experienceData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -9,7 +9,13 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center mb-14"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-purple-400 mb-3">
             <Users className="w-3.5 h-3.5" />
             <span>LEADERSHIP & INVOLVEMENT</span>
@@ -18,17 +24,18 @@ export default function Experience() {
             Experience & Leadership
           </h2>
           <div className="w-12 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mt-3" />
-        </div>
+        </motion.div>
 
         {/* Experience Cards */}
         <div className="max-w-4xl mx-auto space-y-6">
           {experienceData.map((item, idx) => (
             <motion.div
               key={item.organization}
-              initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.55, delay: idx * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4 }}
               className="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800 relative"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
