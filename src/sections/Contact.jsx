@@ -1,25 +1,51 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, MessageSquare, CheckCircle2, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setLoading(true);
-    // Simulate interactive frontend submission
-    setTimeout(() => {
+    setSubmitted(false);
+    setErrorMsg('');
+
+    const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setErrorMsg(data.message || 'Unable to send message. Please try again later.');
+      }
+    } catch (err) {
+      setErrorMsg('Unable to send message. Please try again later.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 600);
+    }
   };
 
   return (
@@ -138,6 +164,13 @@ export default function Contact() {
                 <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                   <span>Thank you! Your message has been sent successfully.</span>
+                </div>
+              )}
+
+              {errorMsg && (
+                <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5 text-rose-400 shrink-0" />
+                  <span>{errorMsg}</span>
                 </div>
               )}
 

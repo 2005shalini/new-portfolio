@@ -53,8 +53,9 @@ def handle_contact():
             "message": "Message sent successfully."
         }), 200
 
-    except Exception:
-        # Catch any SMTP or environment error without leaking internal details
+    except Exception as e:
+        # Catch any SMTP or environment error without leaking internal details to client
+        print(f"[CONTACT ERROR] Email delivery failed: {type(e).__name__} - {e}")
         return jsonify({
             "success": False,
             "message": "Unable to send message. Please try again later."
