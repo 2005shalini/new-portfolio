@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -13,6 +14,8 @@ app = Flask(__name__)
 
 # Allowed origins for development and production
 default_origins = [
+    "https://new-portfolio-1zr241uoi-shalini-richhriya.vercel.app",
+    re.compile(r"https://.*\.vercel\.app"),
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:5174",
@@ -25,7 +28,10 @@ if env_origins:
         allowed_origins = "*"
     else:
         parsed = [origin.strip() for origin in env_origins.split(",") if origin.strip()]
-        allowed_origins = list(set(default_origins + parsed))
+        allowed_origins = list(default_origins)
+        for origin in parsed:
+            if origin not in allowed_origins:
+                allowed_origins.append(origin)
 else:
     allowed_origins = default_origins
 

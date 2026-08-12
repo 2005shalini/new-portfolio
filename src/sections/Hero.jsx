@@ -166,6 +166,7 @@ export default function Hero() {
                   <img
                     src={profileImg}
                     alt="Shalini Richhariya"
+                    fetchPriority="high"
                     className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-700 ease-out"
                   />
                   {/* Subtle bottom gradient overlay for card readability */}

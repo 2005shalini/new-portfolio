@@ -30,8 +30,10 @@ def validate_contact_data(data):
 
     return True
 
-@contact_bp.route('/contact', methods=['POST'])
+@contact_bp.route('/contact', methods=['POST', 'OPTIONS'])
 def handle_contact():
+    if request.method == 'OPTIONS':
+        return jsonify({"success": True}), 200
     try:
         data = request.get_json(silent=True)
 
