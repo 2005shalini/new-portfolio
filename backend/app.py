@@ -14,8 +14,10 @@ app = Flask(__name__)
 
 # Allowed origins for development and production
 default_origins = [
+    "https://new-portfolio-1zr241uoi-shalini-richhariya.vercel.app",
     "https://new-portfolio-1zr241uoi-shalini-richhriya.vercel.app",
     re.compile(r"https://.*\.vercel\.app"),
+    r"https://.*\.vercel\.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:5174",
