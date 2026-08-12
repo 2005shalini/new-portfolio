@@ -17,7 +17,7 @@ export default function Contact() {
     setSubmitted(false);
     setErrorMsg('');
 
-    const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000';
+    const API_BASE_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:5000').replace(/\/+$/, '');
 
     try {
       const response = await fetch(`${API_BASE_URL}/api/contact`, {

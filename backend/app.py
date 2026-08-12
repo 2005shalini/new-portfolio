@@ -21,7 +21,11 @@ default_origins = [
 
 env_origins = os.environ.get("ALLOWED_ORIGINS") or os.environ.get("FRONTEND_URL")
 if env_origins:
-    allowed_origins = [origin.strip() for origin in env_origins.split(",") if origin.strip()]
+    if env_origins.strip() == "*":
+        allowed_origins = "*"
+    else:
+        parsed = [origin.strip() for origin in env_origins.split(",") if origin.strip()]
+        allowed_origins = list(set(default_origins + parsed))
 else:
     allowed_origins = default_origins
 
@@ -45,4 +49,5 @@ def health_check():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='127.0.0.1', port=port, debug=True)
+    host = os.environ.get('HOST', '0.0.0.0')
+    app.run(host=host, port=port, debug=False)

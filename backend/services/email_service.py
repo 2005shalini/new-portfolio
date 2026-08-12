@@ -9,10 +9,15 @@ load_dotenv(dotenv_path=env_path)
 load_dotenv()
 
 def send_contact_email(name, visitor_email, message_text):
-    portfolio_email = os.environ.get('PORTFOLIO_EMAIL', 'shalinirichhariya01@gmail.com')
-    email_password = os.environ.get('EMAIL_PASSWORD', '').strip()
-    smtp_server = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-    smtp_port = int(os.environ.get('SMTP_PORT', 587))
+    portfolio_email = (os.environ.get('PORTFOLIO_EMAIL') or 'shalinirichhariya01@gmail.com').strip()
+    email_password = (os.environ.get('EMAIL_PASSWORD') or '').strip()
+    smtp_server = (os.environ.get('SMTP_SERVER') or 'smtp.gmail.com').strip()
+    
+    raw_port = os.environ.get('SMTP_PORT', '587')
+    try:
+        smtp_port = int(str(raw_port).strip())
+    except (ValueError, TypeError):
+        smtp_port = 587
 
     # Raise explicit error if credentials are missing
     if not portfolio_email or not email_password:
@@ -27,9 +32,14 @@ def send_contact_email(name, visitor_email, message_text):
     body_content = f"Name: {name}\n\nEmail: {visitor_email}\n\nMessage:\n{message_text}"
     msg.set_content(body_content)
 
-    with smtplib.SMTP(smtp_server, smtp_port, timeout=10) as server:
-        server.starttls()
-        server.login(portfolio_email, email_password)
-        server.send_message(msg)
+    if smtp_port == 465:
+        with smtplib.SMTP_SSL(smtp_server, smtp_port, timeout=15) as server:
+            server.login(portfolio_email, email_password)
+            server.send_message(msg)
+    else:
+        with smtplib.SMTP(smtp_server, smtp_port, timeout=15) as server:
+            server.starttls()
+            server.login(portfolio_email, email_password)
+            server.send_message(msg)
 
     return True
